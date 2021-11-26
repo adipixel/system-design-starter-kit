@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -13,6 +13,7 @@ import { WineBoard } from "../features/wine-board/WineBoard";
 import { Header } from "./internal/Header";
 import { Login } from "../features/authentication/Login";
 import { Trivia } from "../features/trivia/Trivia";
+import { GameHome } from "../organisms/GameHome";
 
 export function App() {
   const classes = useStyles();
@@ -23,7 +24,7 @@ export function App() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
-        <BrowserRouter>
+        <HashRouter>
           <Header title="Wine Country" />
           {/* <SideMenu /> */}
           <main className={classes.main}>
@@ -32,9 +33,10 @@ export function App() {
               <Route exact path="/" component={Login} />
               <Route exact path="/dashboard" component={WineBoard} />
               <Route exact path="/play/:wineType" component={Trivia} />
+              <Route exact path="/live" component={GameHome} />
             </Switch>
           </main>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </ThemeProvider>
   );
