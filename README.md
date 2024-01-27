@@ -1,6 +1,6 @@
 # Minimal nginx reverse proxy demo
 
-This repository contains a `docker-compose` orchestrated application with Flask and Vue services running behind an nginx reverse proxy.
+This repository contains a `docker-compose` orchestrated application with Flask and React services running behind an nginx reverse proxy.
 
 ## Warning
 
@@ -13,3 +13,10 @@ To build the containers:
 
 To run the containers:
 `docker-compose up`
+
+## Other docker commands
+
+`docker stop`
+`docker ps`
+`docker images`
+`docker ps -aq | xargs docker stop | xargs docker rm`
